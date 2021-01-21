@@ -17,6 +17,7 @@ namespace ModelsAndModelBinding.Models
         /// The legal first and last name of the student
         /// </summary>
         [Display(Name = "Full Name")]
+        [Required(ErrorMessage = "Please enter a valid full name. Ex: John Doe")]
         public string FullName { get; set; }
 
         /// <summary>
@@ -31,6 +32,8 @@ namespace ModelsAndModelBinding.Models
         /// </summary
         [Display(Name = "Email Address")]
         [DataType(DataType.EmailAddress)]
+        [EmailAddress]
+        [Required(ErrorMessage = "Please enter a valid email address. Ex: johndoe@student.cptc.edu")]
         public string EmailAddress { get; set; }
 
         /// <summary>
@@ -38,6 +41,7 @@ namespace ModelsAndModelBinding.Models
         /// </summary>
         [Display(Name = "Home Phone")]
         [DataType(DataType.PhoneNumber)]
+        [Required(ErrorMessage = "Please enter a valid home phone. Ex: xxx-xxx-xxx")]
         public string PhoneNumber { get; set; }
     }
 }
